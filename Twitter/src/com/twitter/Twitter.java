@@ -2,13 +2,32 @@ package com.twitter;
 
 import java.util.LinkedList; 
 import com.twitter.poruke.TwitterPoruka;
+	/**
+	 * Class that represent Twitter message which has linked lists of messages and returned messages.
+	 * 
+	 * @author Ana Jacimovic
+	 *
+	 */
 public class Twitter { 
+	
+	/**
+	 *  Linked liste of messages.
+	 */
  
 	private LinkedList<TwitterPoruka> poruke = 
 			new LinkedList<TwitterPoruka>(); 
+	/**
+	 * Linked list of returned messages.
+	 * @return message
+	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke(){
 		return poruke;
 	}
+	/**
+	 * Methode for creating new message.
+	 * @param korisnik
+	 * @param poruka
+	 */
 	public void unesi(String korisnik, String poruka) { 
 		//Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka(); 
@@ -18,6 +37,13 @@ public class Twitter {
 		//Poruka se unosi u listu na kraj 
 		poruke.addLast(tp); 
 } 
+/**
+ * Methode which return list of messages.
+ * 
+ * @param maxBroj
+ * @param tag
+ * @return TwitterPoruka[]
+ */
  
 public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) { 
 	if (tag==null || tag == "")
