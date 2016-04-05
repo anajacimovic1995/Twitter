@@ -88,6 +88,15 @@ public class TwitterPorukaTest {
 		
 		assertEquals(poruka, tp.getPoruka());
 	}
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetPorukaBrojKarakteraVeciOd140() {
+		String string = "";
+		for (int i = 0; i < 150; i++) {
+			string += "a";
+		}
+		tp.setPoruka(string);
+	}
 
 
 	/**
