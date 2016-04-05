@@ -46,8 +46,9 @@ public class TwitterPoruka {
 	  * Methode return the message
 	  * @return poruka
 	  */
+	// Greska: Potrebno je da metoda vraca podatke o poruci.
 	public String getPoruka() { 
-	return "poruka"; 
+	return poruka; 
 	} 
 	/**
 	 *  Methode set new value for atribute message.
@@ -61,8 +62,9 @@ public class TwitterPoruka {
 	 * </ul>
 	 * 
 	 */
+	// Greska: Potrebno je da se ispituje poruka,a ne this.poruka
 	public void setPoruka(String poruka) { 
-	if (poruka==null || this.poruka.length()>140) 
+	if (poruka==null || poruka.length()>140) 
 	throw new RuntimeException(
 	"Poruka mora biti uneta i mora imati najvise 140 znakova"); 
 	 
