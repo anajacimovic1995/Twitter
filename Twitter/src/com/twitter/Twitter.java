@@ -30,8 +30,13 @@ public class Twitter {
 	 */
 	public void unesi(String korisnik, String poruka) { 
 		//Pravi se nova poruka i puni podacima.
-		TwitterPoruka tp = new TwitterPoruka(); 
-		tp.setKorisnik("korisnik"); 
+		//Greska: Provera da li je unet null ili prazan string za korisnika i poruku.
+		if (korisnik == null || poruka == null || korisnik.isEmpty() || poruka.length() > 140) {
+			throw new RuntimeException("Customer and message has to exist.");
+		}
+		TwitterPoruka tp = new TwitterPoruka();
+		// Greska: Potrebno je ukloniti navodnike iz razloga sto se unese podaci o korisniku.
+		tp.setKorisnik(korisnik); 
 		tp.setPoruka(poruka); 
  
 		//Poruka se unosi u listu na kraj 
@@ -63,7 +68,8 @@ public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 	for (int i = 0; i < poruke.size(); i++) 
 		if (poruke.get(i).getPoruka().indexOf(tag)!=-1) 
 			if (brojac < maxBroj){ 
-				rezultat[brojac+1]=poruke.get(i);
+				// Greska: Niz nije popunjavan na svako drugo mesto.
+				rezultat[brojac]=poruke.get(i);
 				brojac++; 
 			} 
 			else break; 
