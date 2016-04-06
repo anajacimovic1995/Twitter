@@ -27,6 +27,7 @@ public class Twitter {
 	 * Methode for creating new message.
 	 * @param korisnik
 	 * @param poruka
+	 * @throws java.lang.RuntimeException Baca se izuzetak ako se prosledi null. 
 	 */
 	public void unesi(String korisnik, String poruka) { 
 		//Pravi se nova poruka i puni podacima.
@@ -48,6 +49,7 @@ public class Twitter {
  * @param maxBroj
  * @param tag
  * @return TwitterPoruka[]
+ * @throws java.lang.RuntimeException Baca se izuzetak ako je tag null ili prazan String.
  */
  
 public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) { 
