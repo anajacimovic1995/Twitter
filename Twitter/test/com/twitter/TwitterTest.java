@@ -8,24 +8,39 @@ import org.junit.Test;
 
 import com.twitter.poruke.TwitterPoruka;
 
+/**
+ * 
+ * @author Ana Jacimovic
+ *
+ */
+
 public class TwitterTest {
 	
 	private Twitter twitter;
+	/**
+	 * 
+	 * @throws Exception
+	 */
 
 	@Before
 	public void setUp() throws Exception {
 		twitter = new Twitter();
 	}
+	/**
+	 * 
+	 * @throws Exception
+	 */
 
 	@After
 	public void tearDown() throws Exception {
 		twitter = null;
 	}
-
+	
 	@Test
 	public void testVratiSvePoruke() {
 		twitter.vratiSvePoruke();
 	}
+	
 
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testUnesiNull() {

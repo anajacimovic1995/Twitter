@@ -64,11 +64,11 @@ public class TwitterPoruka {
 	 */
 	// Greska: Potrebno je da se ispituje poruka,a ne this.poruka
 	public void setPoruka(String poruka) { 
-	if (poruka==null || poruka.length()>140) 
-	throw new RuntimeException(
-	"Poruka mora biti uneta i mora imati najvise 140 znakova"); 
+	if (poruka==null || poruka.length()>140 || poruka.isEmpty()) 
+		throw new RuntimeException(
+				"Poruka mora biti uneta i mora imati najvise 140 znakova"); 
 	 
-	this.poruka = poruka; 
+		this.poruka = poruka; 
 	} 
 	/**
 	 * Methode toString return information about customer. 
